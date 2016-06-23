@@ -3,7 +3,7 @@
 module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'ember-magic-mirror',
-    environment: environment,
+    environment,
     baseURL: '/',
     locationType: 'auto',
     EmberENV: {
@@ -16,6 +16,16 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
+    },
+
+    torii: {
+      providers: {
+        'google-oauth2-bearer': {
+          apiKey:   '408023100813-1vceq0bu62oaqb0j75eds0cisgv1di9q.apps.googleusercontent.com',
+          scope: 'email profile https://www.googleapis.com/auth/calendar.readonly',
+          redirectUri: 'http://localhost:4200'
+        }
+      }
     }
   };
 
